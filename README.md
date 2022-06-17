@@ -49,3 +49,27 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 Docker Setup completed 🎉!
 
 ---
+
+## Portainer Setup
+
+Create directory for portainer data:
+
+```bash
+mkdir /portainer mkdir /portainer/data
+```
+
+Run Portainer:
+
+```bash
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always --pull=always -v /var/run/docker.sock:/var/run/docker.sock -v /portainer/data:/data portainer/portainer-ce
+```
+
+---
+
+## Access Portainer
+
+Go to `http://<your-proxmox-url>:9000`
+
+Use the GUI to setup your portainer account.
+
+---
